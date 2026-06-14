@@ -1,4 +1,4 @@
-//Task 1
+/*//Task 1
 
 let age = prompt("Enter Age")
 
@@ -121,7 +121,7 @@ else {
 
  //task 8
 
- let workingDays = prompt("Enter Working Days:");
+/* let workingDays = prompt("Enter Working Days:");
  let presentDays = prompt("Enter Present Days");
 
  let attendance = (presentDays / workingDays) * 100;
@@ -1186,3 +1186,370 @@ function salesReport(items) {
 // Run callback
 generateSalesReport(mobiles, salesReport);*/
 
+
+
+//Friday Task 6
+
+//Task 1.Employee Bonus Calculator
+
+// Employee details
+const employee = {
+  name: "Abinesh",
+  salary: 50000,
+  experience: 6
+};
+
+let bonusPercentage;
+
+// Calculate bonus based on experience
+if (employee.experience >= 5) {
+  bonusPercentage = 20;
+} else if (employee.experience >= 2) {
+  bonusPercentage = 10;
+} else {
+  bonusPercentage = 5;
+}
+
+// Calculate final salary
+const bonusAmount = (employee.salary * bonusPercentage) / 100;
+const finalSalary = employee.salary + bonusAmount;
+
+// Display results
+console.log("Employee Name:", employee.name);
+console.log("Original Salary:", employee.salary);
+console.log("Bonus Percentage:", bonusPercentage + "%");
+console.log("Final Salary:", finalSalary);
+
+/*/ Task 2. College Amission System
+
+let candidateNameName = "Ruthra";
+let age = 18;
+let percentage = 75;
+
+if (age >= 17) {
+    if (percentage >= 60) {
+        console.log("Admission Approved");
+    } else {
+        console.log("Admission Rejected");
+    }
+} else {
+    console.log("Admission Rejected");
+}
+
+let candidateName = "Ruthra";
+let age = 16;
+let percentage = 75;
+
+if (age >= 17) {
+    if (percentage >= 60) {
+        console.log("Admission Approved");
+    } else {
+        console.log("Admission Rejected: Percentage is below 60");
+    }
+} else {
+    console.log("Admission Rejected: Age is below 17");
+}*/
+
+
+//Task 3.Food Delivery Menu
+
+let choice = 1;
+
+switch (choice) {
+    case 1:
+        console.log("Order Confirmed : Pizza");
+        break;
+
+    case 2:
+        console.log("Order Confirmed : Burger");
+        break;
+
+    case 3:
+        console.log("Order Confirmed : Shawarma");
+        break;
+
+    case 4:
+        console.log("Order Confirmed : Fried Rice");
+        break;
+
+    default:
+        console.log("Invalid Selection");
+}
+
+//Task 4.Attedance Tracker
+
+let students = [
+    "Anisha",
+    "Priya",
+    "Rahul",
+    "Kavin",
+    "Arun",
+    "Divya",
+    "Vijay",
+    "Sneha",
+    "Ajay",
+    "Keerthi"
+];
+
+let count = 0;
+
+for (let student of students) {
+    console.log(student);
+    count++;
+}
+
+console.log("Total Students: " + count);
+
+
+//Task 5.E-Commerce Cart
+
+let cart = [
+  { product: "Mobile", price: 15000 },
+  { product: "Headset", price: 2000 },
+  { product: "Charger", price: 1000 }
+];
+
+// Print all products
+console.log("Products in Cart:");
+for (let item of cart) {
+    console.log(item.product);
+}
+
+// Calculate total cart value
+let total = 0;
+for (let item of cart) {
+    total += item.price;
+}
+console.log("Total Cart Value: " + total);
+
+// Find most expensive product
+let expensiveProduct = cart[0];
+
+for (let item of cart) {
+    if (item.price > expensiveProduct.price) {
+        expensiveProduct = item;
+    }
+}
+
+console.log("Most Expensive Product: " + expensiveProduct.product);
+console.log("Price: " + expensiveProduct.price);
+
+//Task 6.Bank Account Management
+
+let balance = 10000;
+
+function deposit(amount) {
+    balance += amount;
+    console.log("Deposited Amount: " + amount);
+}
+
+function withdraw(amount) {
+    if (amount <= balance) {
+        balance -= amount;
+        console.log("Withdrawn Amount: " + amount);
+    } else {
+        console.log("Insufficient Balance");
+    }
+}
+
+function checkBalance() {
+    console.log("Current Balance: " + balance);
+}
+
+deposit(5000);
+withdraw(3000);
+checkBalance();
+
+//Task 7.Movie ticket booking
+
+let age = 25;
+let ticketPrice;
+
+if (age < 5) {
+    ticketPrice = 0;
+    console.log("Free Ticket");
+} else if (age <= 18) {
+    ticketPrice = 100;
+    console.log("Ticket Price: ₹100");
+} else if (age <= 60) {
+    ticketPrice = 200;
+    console.log("Ticket Price: ₹200");
+} else {
+    ticketPrice = 120;
+    console.log("Ticket Price: ₹120");
+}
+
+//Task 8. Online Shopping Discount
+
+let purchaseAmount = 6000;
+let discount = 0;
+let finalAmount;
+
+if (purchaseAmount > 5000) {
+    discount = purchaseAmount * 20 / 100;
+} else if (purchaseAmount > 3000) {
+    discount = purchaseAmount * 10 / 100;
+} else if (purchaseAmount > 1000) {
+    discount = purchaseAmount * 5 / 100;
+}
+
+finalAmount = purchaseAmount - discount;
+
+console.log("Original Amount: ₹" + purchaseAmount);
+console.log("Discount: ₹" + discount);
+console.log("Final Amount: ₹" + finalAmount);
+
+//Task 9.Food Inventory System
+
+let inventory = ["Rice", "Oil", "Sugar", "Milk", "Egg"];
+
+
+inventory.push("Bread");
+inventory.push("Butter");
+//remove first name
+inventory.shift();
+
+//remove last name
+inventory.pop();
+
+// Check whether Milk exists
+if (inventory.includes("Milk")) {
+    console.log("Milk is available");
+} else {
+    console.log("Milk is not available");
+}
+
+// Print final inventory
+console.log("Final Inventory:", inventory);
+
+//Task 10.Hospital Patient Management
+
+let patient = {
+    patientName: "Anisha",
+    patientAge: 26,
+    disease: "Fever",
+    doctor: "Dr. Kumar"
+};
+
+// Display all details using for-in loop
+for (let key in patient) {
+    console.log(key + " : " + patient[key]);
+}
+
+// Destructuring
+let { patientName, patientAgege, disease, doctor } = patient;
+
+// Print separately
+console.log("Patient Name:", patientName);
+console.log("Patient Age:", age);
+console.log("Disease:", disease);
+console.log("Doctor:", doctor);
+
+//Task 11.Amazon Order Tracker
+
+function sendSMS() {
+    console.log("SMS Sent To Customer");
+}
+
+function placeOrder(callback) {
+    console.log("Order Placed Successfully");
+    callback();
+}
+
+placeOrder(sendSMS);
+
+//Task 12.Casback offer generator
+
+function* cashbackOffers() {
+    yield "10% Cashback";
+    yield "20% Cashback";
+    yield "Free Delivery";
+    yield "Buy 1 Get 1";
+}
+
+let offers = cashbackOffers();
+
+console.log(offers.next().value);
+console.log(offers.next().value);
+console.log(offers.next().value);
+console.log(offers.next().value);
+
+//Task 13.Employee database
+
+let employees = [
+    { id: 1, name: "Abinesh", salary: 25000 },
+    { id: 2, name: "Kavin", salary: 30000 },
+    { id: 3, name: "Praveen", salary: 40000 }
+];
+
+// Print all employee names
+console.log("Employee Names:");
+for (let emp of employees) {
+    console.log(emp.name);
+}
+
+// Calculate total salary expense
+let totalSalary = 0;
+for (let emp of employees) {
+    totalSalary += emp.salary;
+}
+console.log("Total Salary Expense: " + totalSalary);
+
+// Find employee with highest salary
+let highestSalaryEmployee = employees[0];
+
+for (let emp of employees) {
+    if (emp.salary > highestSalaryEmployee.salary) {
+        highestSalaryEmployee = emp;
+    }
+}
+
+console.log("Highest Salary Employee: " + highestSalaryEmployee.name);
+console.log("Salary: " + highestSalaryEmployee.salary);
+
+//Task 14.Railway reservation system
+
+let availableSeats = 50;
+
+function bookSeats(seats) {
+    if (seats <= availableSeats) {
+        availableSeats -= seats;
+        console.log("Booking Confirmed for " + seats + " seats");
+        console.log("Available Seats: " + availableSeats);
+    } else {
+        console.log("Booking Rejected: Seats Unavailable");
+    }
+}
+
+// Booking seats
+bookSeats(10);
+bookSeats(20);
+bookSeats(25);
+
+//Task 15.Mobile store billing system
+
+let products = {
+    Mobile: 15000,
+    Laptop: 50000,
+    Headphone: 2000,
+    Smartwatch: 3000
+};
+
+// Customer selected products
+let selectedProducts = ["Mobile", "Headphone"];
+
+let totalAmount = 0;
+
+console.log("Selected Products:");
+
+for (let product of selectedProducts) {
+    console.log(product);
+    totalAmount += products[product];
+}
+
+let gst = totalAmount * 18 / 100;
+let finalBill = totalAmount + gst;
+
+console.log("Total Amount: ₹" + totalAmount);
+console.log("GST (18%): ₹" + gst);
+console.log("Final Bill: ₹" + finalBill);
