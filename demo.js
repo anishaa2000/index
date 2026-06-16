@@ -1557,7 +1557,7 @@ console.log("Final Bill: ₹" + finalBill);*/
 //Monday Task 7
 //Task 1.Traffic signal management
 
-let signalColor = "Red";
+/*let signalColor = "Red";
 
 switch (signalColor) {
     case "Red":
@@ -1894,6 +1894,443 @@ const bookingIDs = movies.map((movie, index) => {
 
 // Output result
 console.log("Movie Booking IDs:");
-console.log(bookingIDs);
+console.log(bookingIDs);*/
+
+//Tuesday task 10
+//Task 1.Employee salary management
+
+const employees = [
+    { id: 1, name: "Rahul", salary: 25000 },
+    { id: 2, name: "Kavin", salary: 50000 },
+    { id: 3, name: "John", salary: 75000 }
+];
+
+// 1. Find employees whose salary is above ₹40,000
+const highSalaryEmployees = employees.filter(emp => emp.salary > 40000);
+
+console.log("Employees with salary above ₹40,000:");
+console.log(highSalaryEmployees);
+
+// 2. Find the first employee whose salary is above ₹60,000
+const firstEmployee = employees.find(emp => emp.salary > 60000);
+
+console.log("First employee with salary above ₹60,000:");
+console.log(firstEmployee);
+
+// 3. Calculate total company salary expense
+const totalSalary = employees.reduce((total, emp) => total + emp.salary, 0);
+
+console.log("Total Company Salary Expense: ₹" + totalSalary);
+
+// 4. Create a new array containing only employee names
+const employeeNames = employees.map(emp => emp.name);
+
+console.log("Employee Names:");
+console.log(employeeNames);
+
+//Task 2.College admissionform
+
+function checkAdmission(name, age, percentage) {
+
+    const student = {
+        name,
+        age,
+        percentage
+    };
+
+    if (student.age >= 18 && student.percentage >= 60) {
+        return `${student.name} is Eligible for Admission`;
+    } else {
+        return `${student.name} is Not Eligible for Admission`;
+    }
+}
+
+console.log(checkAdmission("Rahul", 19, 75));
+console.log(checkAdmission("Kavin", 17, 80));
+console.log(checkAdmission("John", 20, 55));
+
+//Task 3.E-Commerce cart
+
+const cart = [
+    { product: "Shoes", price: 2000, qty: 2 },
+    { product: "Watch", price: 1500, qty: 1 },
+    { product: "Bag", price: 1000, qty: 3 }
+];
+
+// 1. Calculate Total Bill
+const totalBill = cart.reduce((total, item) => {
+    return total + (item.price * item.qty);
+}, 0);
+
+console.log("Total Bill: ₹" + totalBill);
+
+// 2. Find Most Expensive Product
+const expensiveProduct = cart.reduce((max, item) => {
+    return item.price > max.price ? item : max;
+});
+
+console.log("Most Expensive Product:");
+console.log(expensiveProduct);
+
+// 3. Display All Product Names
+const productNames = cart.map(item => item.product);
+
+console.log("Product Names:");
+console.log(productNames);
+
+//Task 4.Traffic fine system
+
+function trafficFine(signal, violation = false) {
+
+    switch (signal.toLowerCase()) {
+
+        case "red":
+            console.log("Action: STOP");
+            if (violation) {
+                console.log("Fine Amount: ₹1000");
+            }
+            break;
+
+        case "yellow":
+            console.log("Action: READY / SLOW DOWN");
+            if (violation) {
+                console.log("Fine Amount: ₹500");
+            }
+            break;
+
+        case "green":
+            console.log("Action: GO");
+            if (violation) {
+                console.log("Fine Amount: ₹0");
+            }
+            break;
+
+        default:
+            console.log("Invalid Traffic Signal");
+    }
+}
+
+// Test Cases
+trafficFine("red", true);
+trafficFine("yellow", true);
+trafficFine("green", false);
+
+//Task 5.Student Result Processing
+
+const students = [
+    { name: "A", mark: 95 },
+    { name: "B", mark: 45 },
+    { name: "C", mark: 80 },
+    { name: "D", mark: 30 }
+];
+
+// 1. Find Passed Students (Mark >= 50)
+const passedStudents = students.filter(student => student.mark >= 50);
+
+console.log("Passed Students:");
+console.log(passedStudents);
+
+// 2. Find Failed Students (Mark < 50)
+const failedStudents = students.filter(student => student.mark < 50);
+
+console.log("Failed Students:");
+console.log(failedStudents);
+
+// 3. Create Grade List
+const gradeList = students.map(student => {
+    let grade;
+
+    if (student.mark >= 90) {
+        grade = "A+";
+    } else if (student.mark >= 75) {
+        grade = "A";
+    } else if (student.mark >= 50) {
+        grade = "B";
+    } else {
+        grade = "F";
+    }
+
+    return {
+        name: student.name,
+        mark: student.mark,
+        grade: grade
+    };
+});
+
+console.log("Grade List:");
+console.log(gradeList);
+
+//Task 6.Online food delivery
+
+function placeOrder(customerName, ...items) {
+    console.log("Customer Name:", customerName);
+    console.log("Ordered Items:", items);
+    console.log("Total Items:", items.length);
+}
+
+placeOrder(
+    "Anisha",
+    "Pizza",
+    "Burger",
+    "French Fries",
+    "Cold Coffee"
+);
+
+//Task 7.Bank account system
+
+let balance = 5000;
+
+function deposit(amount) {
+    balance += amount;
+    return balance;
+}
+
+function withdraw(amount) {
+    if (amount <= balance) {
+        balance -= amount;
+        return balance;
+    } else {
+        return "Insufficient Balance";
+    }
+}
+
+function checkBalance() {
+    return balance;
+}
+
+// Transactions
+console.log("Current Balance:", checkBalance());
+
+console.log("After Deposit:", deposit(2000));
+
+console.log("After Withdrawal:", withdraw(1500));
+
+console.log("Available Balance:", checkBalance());
+
+//Task 8.Movie ticket booking
+
+let bookedSeats = ["A1", "A2", "B3"];
+
+function bookSeat(seatNumber) {
+    let isBooked = false;
+
+    for (let seat of bookedSeats) {
+        if (seat === seatNumber) {
+            isBooked = true;
+            break;
+        }
+    }
+
+    if (isBooked) {
+        console.log(seatNumber + " is already booked.");
+    } else {
+        bookedSeats.push(seatNumber);
+        console.log(seatNumber + " booked successfully.");
+    }
+}
+
+function showBookedSeats() {
+    console.log("Booked Seats:");
+    
+    for (let seat of bookedSeats) {
+        console.log(seat);
+    }
+}
+
+// Booking seats
+bookSeat("A3");
+bookSeat("A1");
+
+// Display all booked seats
+showBookedSeats();
+
+//Task 9.User login validation
+
+function validateLogin(username, email, password) {
+
+    if (username.includes(" ")) {
+        console.log("Username should not contain spaces");
+    } 
+    else if (!email.includes("@")) {
+        console.log("Invalid Email");
+    } 
+    else if (password.length < 8) {
+        console.log("Password must contain at least 8 characters");
+    } 
+    else {
+        console.log("Login Validation Successful");
+    }
+}
+
+// Test
+validateLogin("Anisha", "anisha@gmail.com", "mern1234");
+
+//Task 10.Product API Dashboard
+
+fetch("https://fakestoreapi.com/products")
+  .then(response => response.json())
+  .then(products => {
+
+    console.log("Product Titles:");
+    
+    products.forEach(product => {
+      console.log(product.title);
+    });
+
+    const expensiveProducts = products.filter(product => {
+      return product.price > 1000;
+    });
+
+    console.log("\nProducts Above ₹1000:");
+    expensiveProducts.forEach(product => {
+      console.log(product.title);
+    });
+
+    console.log("\nTotal Products:", products.length);
+
+  })
+  .catch(error => {
+    console.log("Error Fetching Data:", error);
+  });
+
+  //Task 11.Birthday day finder
+
+  function birthdayFinder(dob) {
+    const birthDate = new Date(dob);
+
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    console.log("Day:", birthDate.getDate());
+    console.log("Month:", birthDate.getMonth() + 1);
+    console.log("Year:", birthDate.getFullYear());
+    console.log("Weekday Name:", days[birthDate.getDay()]);
+}
+
+// Example
+birthdayFinder("2002-08-15");
+
+//Task 12.Netflix subscription system
+
+function showPlanBenefits(plan) {
+
+    const benefits =
+        plan === "Mobile" ? "Watch on 1 mobile device." :
+        plan === "Basic" ? "Watch on 1 device in HD quality." :
+        plan === "Standard" ? "Watch on 2 devices in Full HD." :
+        plan === "Premium" ? "Watch on 4 devices in Ultra HD (4K)." :
+        "Invalid Plan";
+
+    console.log("Selected Plan:", plan);
+    console.log("Benefits:", benefits);
+}
+
+// Example
+showPlanBenefits("Premium");
+
+//Task 13.Hospital patient management
+
+const patients = [
+  { id: 1, name: "Ravi", age: 45, condition: "Critical" },
+  { id: 2, name: "Priya", age: 30, condition: "Stable" },
+  { id: 3, name: "Arun", age: 60, condition: "Critical" },
+  { id: 4, name: "Divya", age: 25, condition: "Stable" }
+];
+
+// Find Critical Patients
+const criticalPatients = patients.filter(patient =>
+  patient.condition === "Critical"
+);
+
+console.log("Critical Patients:");
+console.log(criticalPatients);
+
+// Find Patient by ID
+const patient = patients.find(patient =>
+  patient.id === 3
+);
+
+console.log("\nPatient Details:");
+console.log(patient);
+
+// Count Total Patients
+console.log("\nTotal Patients:", patients.length);
+
+//Task 14.Inventory management system
+
+const inventory1 = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mobile", price: 20000 }
+];
+
+const inventory2 = [
+  { id: 3, name: "Headphone", price: 2000 },
+  { id: 4, name: "Smartwatch", price: 5000 }
+];
+
+// Merge two inventory arrays
+const mergedInventory = [...inventory1, ...inventory2];
+
+console.log("Merged Inventory:");
+console.log(mergedInventory);
+
+// Extract product details using destructuring
+const { id, name, price } = mergedInventory[0];
+
+console.log("\nProduct Details:");
+console.log("ID:", id);
+console.log("Name:", name);
+console.log("Price:", price);
+
+// Add new product using spread operator
+const updatedInventory = [
+  ...mergedInventory,
+  { id: 5, name: "Tablet", price: 15000 }
+];
+
+console.log("\nUpdated Inventory:");
+console.log(updatedInventory);
+
+//Task 15.Whatsapp group management
+
+let groupMembers = ["Anisha", "Rahul", "Priya"];
+
+// Add members
+groupMembers.push("Arun");
+groupMembers.push("Divya");
+
+console.log("After Adding Members:");
+console.log(groupMembers);
+
+// Remove last member
+groupMembers.pop();
+
+console.log("\nAfter pop():");
+console.log(groupMembers);
+
+// Remove first member
+groupMembers.shift();
+
+console.log("\nAfter shift():");
+console.log(groupMembers);
+
+// Add member at beginning
+groupMembers.unshift("Karthik");
+
+console.log("\nAfter unshift():");
+console.log(groupMembers);
+
+// Insert member at specific position
+groupMembers.splice(2, 0, "Sneha");
+
+console.log("\nFinal Group List:");
+console.log(groupMembers);
 
 
