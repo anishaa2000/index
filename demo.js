@@ -1899,7 +1899,7 @@ console.log(bookingIDs);*/
 //Tuesday task 10
 //Task 1.Employee salary management
 
-const employees = [
+/*const employees = [
     { id: 1, name: "Rahul", salary: 25000 },
     { id: 2, name: "Kavin", salary: 50000 },
     { id: 3, name: "John", salary: 75000 }
@@ -2331,6 +2331,152 @@ console.log(groupMembers);
 groupMembers.splice(2, 0, "Sneha");
 
 console.log("\nFinal Group List:");
-console.log(groupMembers);
+console.log(groupMembers);*/
 
 
+
+const productContainer = document.getElementById("products");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const loading = document.getElementById("loading");
+const cartCount = document.getElementById("cartCount");
+const statsDiv = document.getElementById("stats");
+
+let products = [];
+let cart = [];
+
+// Fetch API
+fetch("https://fakestoreapi.com/products")
+.then(response => response.json())
+.then(data => {
+    products = data;
+    displayProducts(products);
+    displayStats(products);
+
+    loading.innerText = "Products Loaded Successfully.";
+    setTimeout(() => {
+        loading.style.display = "none";
+    }, 1500);
+})
+.catch(error => {
+    console.log(error);
+    loading.innerText = "Error Loading Products!";
+})
+.finally(() => {
+    console.log("API Request Completed");
+});
+
+// Display Products
+function displayProducts(data) {
+
+    productContainer.innerHTML = "";
+
+    data.forEach(product => {
+
+        let card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="">
+            <h3>${product.title}</h3>
+            <p class="price">$${product.price}</p>
+            <p class="category">${product.category}</p>
+            <p class="rating">⭐ ${product.rating.rate}</p>
+
+            <button class="addBtn"
+            onclick="addToCart(${product.id})">
+            Add To Cart
+            </button>
+
+            <button class="removeBtn"
+            onclick="removeFromCart(${product.id})">
+            Remove
+            </button>
+        `;
+
+        productContainer.appendChild(card);
+    });
+}
+
+// Search Product
+searchInput.addEventListener("keyup", filterProducts);
+
+// Category Filter
+categoryFilter.addEventListener("change", filterProducts);
+
+function filterProducts() {
+
+    let searchValue = searchInput.value.toLowerCase();
+    let categoryValue = categoryFilter.value;
+
+    let filtered = products.filter(product => {
+
+        let matchTitle =
+        product.title.toLowerCase().includes(searchValue);
+
+        let matchCategory =
+        categoryValue === "all" ||
+        product.category === categoryValue;
+
+        return matchTitle && matchCategory;
+    });
+
+    displayProducts(filtered);
+}
+
+// Statistics
+function displayStats(data) {
+
+    let totalProducts = data.length;
+
+    let averagePrice =
+    (data.reduce((sum, product) =>
+    sum + product.price, 0) / totalProducts).toFixed(2);
+
+    let highestPriceProduct =
+    [...data].sort((a,b) => b.price - a.price)[0];
+
+    let lowestPriceProduct =
+    [...data].sort((a,b) => a.price - b.price)[0];
+
+    statsDiv.innerHTML = `
+        <h3>Product Statistics</h3>
+        <p>Total Products : ${totalProducts}</p>
+        <p>Average Price : $${averagePrice}</p>
+        <p>Highest Price Product :
+        ${highestPriceProduct.title}</p>
+        <p>Lowest Price Product :
+        ${lowestPriceProduct.title}</p>
+    `;
+}
+
+// Add To Cart
+function addToCart(id) {
+
+    let product = products.find(p => p.id === id);
+
+    cart.push(product);
+
+    updateCartCount();
+}
+
+// Remove From Cart
+function removeFromCart(id) {
+
+    let removed = false;
+
+    cart = cart.filter(item => {
+        if (!removed && item.id === id) {
+            removed = true;
+            return false;
+        }
+        return true;
+    });
+
+    updateCartCount();
+}
+
+// Update Cart Count
+function updateCartCount() {
+    cartCount.innerText = cart.length;
+}
