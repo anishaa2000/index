@@ -2334,7 +2334,7 @@ console.log("\nFinal Group List:");
 console.log(groupMembers);*/
 
 
-
+/*
 const productContainer = document.getElementById("products");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
@@ -2479,4 +2479,762 @@ function removeFromCart(id) {
 // Update Cart Count
 function updateCartCount() {
     cartCount.innerText = cart.length;
+}*/
+
+
+// TASK 1
+
+// Task 1: Variable Practice
+
+let studentName = "Naveen";
+let studentAge = 18;
+let studentCourse = "MERN Stack";
+
+console.log(studentName);
+console.log(studentAge);
+console.log(studentCourse);
+
+// Task 2: Var, Let, Const
+
+var company = "Stackly";
+let salary = 20000;
+const country = "India";
+
+// Update values
+company = "Google";
+salary = 30000;
+
+// Print values
+console.log(company);
+console.log(salary);
+console.log(country);
+
+// Task 3: User Name
+
+let userName = prompt("What is your name?");
+
+console.log("Welcome " + userName);
+
+// Task 4: Confirm Box
+
+let knowsJavaScript = confirm("Do you know JavaScript?");
+
+console.log(knowsJavaScript);
+
+// Task 5: Student Information
+
+let studentName = prompt("Enter Student Name:");
+let studentAge = prompt("Enter Student Age:");
+let studentCity = prompt("Enter Student City:");
+
+console.log("Name :", studentName);
+console.log("Age :", studentAge);
+console.log("City :", studentCity);
+
+// Task 6: Alert Message
+
+let course = "JavaScript";
+
+alert("Welcome to " + course);
+
+// Task 7: Document Write
+
+document.writeln("Hello Student");
+document.writeln("<br>");
+document.writeln("Welcome to JavaScript");
+
+// Task 8: Favorite Things
+
+let favoriteFood = "Chicken Biryani";
+let favoriteColor = "Black";
+let favoriteMovie = "Leo";
+
+console.log("Food :", favoriteFood);
+console.log("Color :", favoriteColor);
+console.log("Movie :", favoriteMovie);
+
+// Task 9: Mini Bio Data
+
+let name = "Naveen";
+let age = 18;
+let phone = "9876543210";
+let email = "naveen@example.com";
+
+console.log("Name :", name);
+console.log("Age :", age);
+console.log("Phone :", phone);
+console.log("Email :", email);
+
+// Task 10 (Challenge)
+
+let name = prompt("Enter your name:");
+let course = prompt("Enter your course:");
+
+alert("Hello " + name + ", Welcome to " + course + " Course");
+
+//TASK 2
+
+// Task 1: Student Result Checker
+
+let marks = 75;
+
+// Pass or Fail
+let result = (marks >= 35) ? "Pass" : "Fail";
+
+// Grade
+let grade;
+
+if (marks >= 90) {
+    grade = "Grade A";
+} else if (marks >= 75) {
+    grade = "Grade B";
+} else if (marks >= 60) {
+    grade = "Grade C";
+} else {
+    grade = "No Grade";
+}
+
+// Output
+console.log("Marks :", marks);
+console.log("Result :", result);
+console.log("Grade :", grade);
+
+// Task 2: Employee Bonus Calculator
+
+let salary = 25000;
+
+// Calculate 10% bonus
+let bonus = salary * 0.10;
+
+// Add bonus to salary
+salary += bonus;
+
+// Print results
+console.log("Original Salary :", 25000);
+console.log("Bonus :", bonus);
+console.log("Final Salary :", salary);
+
+// Task 3: User Login Validation
+
+let email = "admin@gmail.com";
+let password = "12345";
+
+if (email === "admin@gmail.com" && password === "12345") {
+    console.log("Login Success");
+} else {
+    console.log("Login Failed");
+}
+
+
+// Task 4: Product Discount Calculator
+
+let price = 2000;
+
+// Calculate final amount using ternary operator
+let finalAmount = (price > 1000) ? price - (price * 20 / 100) : price;
+
+// Print results
+console.log("Original Price :", price);
+console.log("Final Amount :", finalAmount);
+
+// Task 5: Array Product Management
+
+let products = ["Laptop", "Mobile", "Mouse", "Keyboard"];
+
+// Print first product
+console.log("First Product :", products[0]);
+
+// Print last product
+console.log("Last Product :", products[products.length - 1]);
+
+// Print total number of products
+console.log("Total Products :", products.length);
+
+// Task 6: Employee Object
+
+let employee = {
+    name: "Naveen",
+    department: "Development",
+    salary: 30000
+};
+
+// Print all details
+console.log(employee);
+
+// Print only employee name
+console.log("Employee Name :", employee.name);
+
+// Print only salary
+console.log("Salary :", employee.salary);
+
+// Task 7: E-Commerce Cart Total
+
+let shirt = 500;
+let pant = 1000;
+let shoe = 1500;
+
+// Calculate total bill
+let totalBill = shirt + pant + shoe;
+
+// Calculate 10% discount
+let discount = totalBill * 0.10;
+
+// Calculate final amount
+let finalAmount = totalBill - discount;
+
+// Print results
+console.log("Total Bill :", totalBill);
+console.log("Discount :", discount);
+console.log("Final Amount :", finalAmount);
+
+// Task 8: Age Eligibility Checker
+
+let age = 19;
+
+if (age >= 18) {
+    console.log("Eligible for Voting");
+} else {
+    console.log("Not Eligible");
+}
+
+// Task 9: Increment & Decrement Practice
+
+let a = 10;
+
+console.log("Initial Value :", a);
+
+a++;
+console.log("After a++ :", a);
+
+++a;
+console.log("After ++a :", a);
+
+a--;
+console.log("After a-- :", a);
+
+--a;
+console.log("After --a :", a);
+
+let isPresent = true;
+let completedTask = false;
+
+if (isPresent && completedTask) {
+    console.log("Eligible for Salary");
+} else {
+    console.log("Not Eligible");
+}
+
+//TASK 3
+
+// Task 1: Employee Salary Calculator
+
+let basicSalary = 25000;
+
+// Calculate HRA (20%)
+let hra = basicSalary * 0.20;
+
+// Calculate Bonus (10%)
+let bonus = basicSalary * 0.10;
+
+// Calculate Total Salary
+let totalSalary = basicSalary + hra + bonus;
+
+// Calculate Tax (5% of Total Salary)
+let tax = totalSalary * 0.05;
+
+// Calculate Final Salary
+let finalSalary = totalSalary - tax;
+
+// Print Results
+console.log("Basic Salary :", basicSalary);
+console.log("HRA :", hra);
+console.log("Bonus :", bonus);
+console.log("Tax :", tax);
+console.log("Final Salary :", finalSalary);
+
+// Task 1: Employee Salary Calculator
+
+let basicSalary = 25000;
+
+// Calculate HRA (20%)
+let hra = basicSalary * 0.20;
+
+// Calculate Bonus (10%)
+let bonus = basicSalary * 0.10;
+
+// Calculate Total Salary
+let totalSalary = basicSalary + hra + bonus;
+
+// Calculate Tax (5% of Total Salary)
+let tax = totalSalary * 0.05;
+
+// Calculate Final Salary
+let finalSalary = totalSalary - tax;
+
+// Print Results
+console.log("Basic Salary :", basicSalary);
+console.log("HRA :", hra);
+console.log("Bonus :", bonus);
+console.log("Tax :", tax);
+console.log("Final Salary :", finalSalary);
+
+// Task 3: Login Authentication System
+
+let username = prompt("Enter Username:");
+let password = prompt("Enter Password:");
+
+if (username === "admin") {
+    if (password === "12345") {
+        console.log("Login Success");
+    } else {
+        console.log("Invalid Password");
+    }
+} else {
+    console.log("Invalid Username");
+}
+
+// Task 4: ATM Withdrawal Machine
+
+let balance = 5000;
+let withdrawAmount = Number(prompt("Enter withdrawal amount:"));
+
+if (withdrawAmount > balance) {
+    console.log("Insufficient Balance");
+} else {
+    balance = balance - withdrawAmount;
+    console.log("Withdrawal Success");
+    console.log("Remaining Balance :", balance);
+}
+
+// Task 5: E-Commerce Discount System
+
+let purchaseAmount = Number(prompt("Enter Purchase Amount:"));
+
+let discount = 0;
+let finalAmount;
+
+if (purchaseAmount >= 10000) {
+    discount = purchaseAmount * 0.20;
+} else if (purchaseAmount >= 5000) {
+    discount = purchaseAmount * 0.10;
+} else if (purchaseAmount >= 2000) {
+    discount = purchaseAmount * 0.05;
+} else {
+    discount = 0;
+}
+
+finalAmount = purchaseAmount - discount;
+
+console.log("Original Amount :", purchaseAmount);
+console.log("Discount :", discount);
+console.log("Final Amount :", finalAmount);
+
+// Task 6: Traffic Fine Checker
+
+let hasHelmet = prompt("Do you have a helmet? (yes/no)");
+let hasLicense = prompt("Do you have a license? (yes/no)");
+
+if (hasHelmet === "no" && hasLicense === "no") {
+    console.log("Fine : ₹3000");
+} else if (hasHelmet === "no") {
+    console.log("Fine : ₹1000");
+} else if (hasLicense === "no") {
+    console.log("Fine : ₹2000");
+} else {
+    console.log("No Fine");
+}
+
+// Task 7: Employee Attendance Tracker
+
+let attendance = ["P", "P", "A", "P", "A", "P", "P"];
+
+let presentDays = 0;
+let absentDays = 0;
+
+for (let i = 0; i < attendance.length; i++) {
+    if (attendance[i] === "P") {
+        presentDays++;
+    } else if (attendance[i] === "A") {
+        absentDays++;
+    }
+}
+
+console.log("Present Days :", presentDays);
+console.log("Absent Days :", absentDays);
+
+// Task 8: Product Inventory Management
+
+let product = {
+    productName: "Laptop",
+    price: 50000,
+    stock: 10
+};
+
+// Print all keys and values using for...in loop
+for (let key in product) {
+    console.log(key + " : " + product[key]);
+}
+
+// Task 9: Cab Fare Calculator
+
+let distance = Number(prompt("Enter Distance (KM):"));
+let fare = 0;
+
+if (distance <= 5) {
+    fare = distance * 20;
+} else if (distance <= 10) {
+    fare = (5 * 20) + ((distance - 5) * 15);
+} else {
+    fare = (5 * 20) + (5 * 15) + ((distance - 10) * 10);
+}
+
+console.log("Distance :", distance + " KM");
+console.log("Total Fare : ₹" + fare);
+
+// Task 10: Mini Employee Management System
+
+let employees = [
+    { id: 1, name: "Rahul", salary: 25000 },
+    { id: 2, name: "Kiran", salary: 30000 },
+    { id: 3, name: "Navi", salary: 40000 }
+];
+
+// Print all employees
+console.log("All Employees:");
+for (let i = 0; i < employees.length; i++) {
+    console.log(employees[i]);
+}
+
+// Find highest and lowest salary
+let highestSalary = employees[0];
+let lowestSalary = employees[0];
+
+// Calculate total salary
+let totalSalary = 0;
+
+for (let i = 0; i < employees.length; i++) {
+
+    if (employees[i].salary > highestSalary.salary) {
+        highestSalary = employees[i];
+    }
+
+    if (employees[i].salary < lowestSalary.salary) {
+        lowestSalary = employees[i];
+    }
+
+    totalSalary += employees[i].salary;
+}
+
+// Count employees
+let totalEmployees = employees.length;
+
+// Print results
+console.log("Highest Salary Employee :", highestSalary);
+console.log("Lowest Salary Employee :", lowestSalary);
+console.log("Total Employees :", totalEmployees);
+console.log("Total Salary Expenditure :", totalSalary);
+
+//TASK 4
+
+// Task 1: Age Category Finder
+
+let age = Number(prompt("Enter your age:"));
+
+if (age >= 0 && age <= 12) {
+    console.log("Child");
+} else if (age >= 13 && age <= 19) {
+    console.log("Teenager");
+} else if (age >= 20 && age <= 59) {
+    console.log("Adult");
+} else if (age >= 60) {
+    console.log("Senior Citizen");
+} else {
+    console.log("Invalid Age");
+}
+
+// Task 2: Salary Hike Calculator
+
+let salary = Number(prompt("Enter your salary:"));
+let hike = 0;
+let newSalary;
+
+if (salary < 20000) {
+    hike = salary * 0.20;
+} else if (salary <= 50000) {
+    hike = salary * 0.10;
+} else {
+    hike = salary * 0.05;
+}
+
+newSalary = salary + hike;
+
+console.log("Old Salary :", salary);
+console.log("Hike :", hike);
+console.log("New Salary :", newSalary);
+
+// Task 3: Electricity Department
+
+let units = Number(prompt("Enter units consumed:"));
+let bill = 0;
+
+if (units <= 100) {
+    bill = units * 5;
+} else if (units <= 200) {
+    bill = units * 7;
+} else {
+    bill = units * 10;
+}
+
+console.log("Units Consumed :", units);
+console.log("Total Bill : ₹" + bill);
+
+// Task 4: Simple ATM
+
+let balance = 10000;
+let withdrawAmount = Number(prompt("Enter withdrawal amount:"));
+
+if (withdrawAmount <= balance) {
+    balance = balance - withdrawAmount;
+
+    console.log("Withdrawal Successful");
+    console.log("Remaining Balance : ₹" + balance);
+} else {
+    console.log("Insufficient Funds");
+}
+
+// Task 5: Login Validation
+
+let username = prompt("Enter Username:");
+let password = prompt("Enter Password:");
+
+if (username === "admin" && password === "12345") {
+    console.log("Login Successful");
+} else {
+    console.log("Invalid Username or Password");
+}
+
+// Task 7: Traffic Signal System
+
+let color = prompt("Enter Traffic Signal Color:").toLowerCase();
+
+switch (color) {
+    case "red":
+        console.log("Stop");
+        break;
+
+    case "yellow":
+        console.log("Ready");
+        break;
+
+    case "green":
+        console.log("Go");
+        break;
+
+    default:
+        console.log("Invalid Signal Color");
+}
+
+// Task 8: Employee Attendance
+
+let workingDays = Number(prompt("Enter Total Working Days:"));
+let presentDays = Number(prompt("Enter Present Days:"));
+
+let attendancePercentage = (presentDays / workingDays) * 100;
+
+console.log("Attendance Percentage :", attendancePercentage.toFixed(2) + "%");
+
+if (attendancePercentage >= 75) {
+    console.log("Eligible");
+} else {
+    console.log("Not Eligible");
+}
+
+// Task 9: Bus Ticket Booking
+
+let ticketPrice = 500;
+let numberOfTickets = Number(prompt("Enter Number of Tickets:"));
+
+// Calculate total amount
+let totalAmount = ticketPrice * numberOfTickets;
+
+// Calculate GST (5%)
+let gst = totalAmount * 0.05;
+
+// Calculate final amount
+let finalAmount = totalAmount + gst;
+
+// Print details
+console.log("Ticket Price : ₹" + ticketPrice);
+console.log("Number of Tickets :", numberOfTickets);
+console.log("Total Amount : ₹" + totalAmount);
+console.log("GST (5%) : ₹" + gst);
+console.log("Final Amount : ₹" + finalAmount);
+
+// Task 10: Restaurant Bill
+
+let foodCost = Number(prompt("Enter Food Cost:"));
+let discount = 0;
+let finalBill;
+
+if (foodCost > 2000) {
+    discount = foodCost * 0.10;
+} else {
+    discount = 0;
+}
+
+finalBill = foodCost - discount;
+
+console.log("Food Cost : ₹" + foodCost);
+console.log("Discount : ₹" + discount);
+console.log("Final Bill : ₹" + finalBill);
+
+// Task 11: Police Recruitment
+
+let age = Number(prompt("Enter Age:"));
+let height = Number(prompt("Enter Height (cm):"));
+let weight = Number(prompt("Enter Weight (kg):"));
+
+if (age >= 18) {
+    if (height >= 160) {
+        if (weight >= 55) {
+            console.log("Selected for Police Recruitment");
+        } else {
+            console.log("Rejected: Weight should be at least 55 kg");
+        }
+    } else {
+        console.log("Rejected: Height should be at least 160 cm");
+    }
+} else {
+    console.log("Rejected: Age should be at least 18 years");
+}
+
+// Task 12: Student Result
+
+let mark1 = Number(prompt("Enter Subject 1 Marks:"));
+let mark2 = Number(prompt("Enter Subject 2 Marks:"));
+let mark3 = Number(prompt("Enter Subject 3 Marks:"));
+let mark4 = Number(prompt("Enter Subject 4 Marks:"));
+let mark5 = Number(prompt("Enter Subject 5 Marks:"));
+
+// Calculate Total
+let total = mark1 + mark2 + mark3 + mark4 + mark5;
+
+// Calculate Percentage
+let percentage = total / 5;
+
+// Determine Grade
+let grade;
+
+if (percentage >= 90) {
+    grade = "A+";
+} else if (percentage >= 80) {
+    grade = "A";
+} else if (percentage >= 70) {
+    grade = "B";
+} else if (percentage >= 60) {
+    grade = "C";
+} else {
+    grade = "Fail";
+}
+
+// Print Result
+console.log("Total Marks :", total);
+console.log("Percentage :", percentage + "%");
+console.log("Grade :", grade);
+
+// Task 13: Employee Shift Finder
+
+let time = Number(prompt("Enter Time (0-23):"));
+
+if (time >= 6 && time < 14) {
+    console.log("Morning Shift");
+} else if (time >= 14 && time < 22) {
+    console.log("Afternoon Shift");
+} else if ((time >= 22 && time <= 23) || (time >= 0 && time < 6)) {
+    console.log("Night Shift");
+} else {
+    console.log("Invalid Time");
+}
+
+// Task 14: Loan Eligibility
+
+let age = Number(prompt("Enter Age:"));
+let salary = Number(prompt("Enter Salary:"));
+let experience = Number(prompt("Enter Experience (Years):"));
+
+if (age >= 21 && salary >= 25000 && experience >= 2) {
+    console.log("Eligible");
+} else {
+    console.log("Not Eligible");
+}
+
+// Task 17: Password Checker
+
+let password = prompt("Enter Password:");
+let length = password.length;
+
+if (length < 6) {
+    console.log("Weak Password");
+} else if (length <= 10) {
+    console.log("Medium Password");
+} else {
+    console.log("Strong Password");
+}
+
+// Task 18: Company Bonus System
+
+let salary = Number(prompt("Enter Salary:"));
+let experience = Number(prompt("Enter Experience (Years):"));
+
+let bonus = 0;
+
+if (experience >= 0 && experience <= 2) {
+    bonus = salary * 0.05;
+} else if (experience >= 3 && experience <= 5) {
+    bonus = salary * 0.10;
+} else if (experience >= 6) {
+    bonus = salary * 0.20;
+} else {
+    console.log("Invalid Experience");
+}
+
+let finalSalary = salary + bonus;
+
+console.log("Salary : ₹" + salary);
+console.log("Bonus : ₹" + bonus);
+console.log("Final Salary : ₹" + finalSalary);
+
+// Task 19: Countdown Timer
+
+let count = 10;
+
+while (count >= 1) {
+    console.log(count);
+    count--;
+}
+
+console.log("Happy New Year");
+
+// Task 20: Interview Selection System
+
+let degreeCompleted = prompt("Is your degree completed? (yes/no)");
+let communication = prompt("Is your communication good? (yes/no)");
+let technicalScore = Number(prompt("Enter Technical Score:"));
+
+if (degreeCompleted === "yes") {
+
+    if (communication === "yes") {
+
+        if (technicalScore >= 70) {
+            console.log("Selected for Interview");
+        } else {
+            console.log("Rejected: Technical Score should be 70 or above");
+        }
+
+    } else {
+        console.log("Rejected: Communication Skills are not Good");
+    }
+
+} else {
+    console.log("Rejected: Degree Not Completed");
 }
